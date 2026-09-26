@@ -1,0 +1,9 @@
+
+CHURN PROJECT — KEY RESULTS
+- Dataset: 7043 customers, 20 features
+- Overall churn rate: 26.5%
+- Logistic Regression accuracy: 0.82
+- XGBoost accuracy: 0.80
+- Monthly revenue at risk (all flagged): $23,893.55
+- Top 20% riskiest customers: 282 customers, $21,771.50/month
+- Estimated annual savings (30% retention): $78,377.40
