@@ -29,3 +29,17 @@ st.header("Explore by Contract Type")
 contract_filter = st.selectbox("Select Contract Type", df['Contract'].unique())
 filtered = df[df['Contract'] == contract_filter]
 st.write(f"Churn rate for {contract_filter}: {(filtered['Churn'] == 'Yes').mean()*100:.1f}%")
+
+st.header("Adjust Risk Threshold")
+threshold = st.slider("Churn probability threshold", 0.0, 1.0, 0.5)
+
+flagged = top_risk[top_risk['churn_prob'] >= threshold]
+st.write(f"Customers flagged at this threshold: {len(flagged)}")
+st.write(f"Revenue at risk: ${flagged['MonthlyCharges'].sum():,.2f}")
+
+st.header("Filter by Tenure")
+min_tenure, max_tenure = st.slider("Tenure range (months)", 0, 72, (0, 72))
+
+tenure_filtered = df[(df['tenure'] >= min_tenure) & (df['tenure'] <= max_tenure)]
+churn_rate = (tenure_filtered['Churn'] == 'Yes').mean() * 100
+st.write(f"Churn rate for customers with {min_tenure}-{max_tenure} months tenure: {churn_rate:.1f}%")
