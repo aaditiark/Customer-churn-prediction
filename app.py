@@ -43,19 +43,7 @@ at_risk_revenue = top_risk['MonthlyCharges'].sum()
 n_at_risk = len(top_risk)
 estimated_annual_savings = at_risk_revenue * 0.30 * 12
 
-st.header("📊 Key Results")
 
-st.header("⚠️ Top Risk Customers")
-
-st.header("📈 Churn Rate by Contract Type")
-
-st.header("🔍 Explore by Contract Type")
-
-st.header("🎚️ Adjust Risk Threshold")
-
-st.header("⏳ Filter by Tenure")
-
-st.header("✅ Recommendation")
 
 st.header("Key Results")
 col1, col2, col3, col4 = st.columns(4)
