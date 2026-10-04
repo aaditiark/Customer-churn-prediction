@@ -4,23 +4,18 @@ import pandas as pd
 st.set_page_config(page_title="Churn Prediction Dashboard", layout="wide")
 
 st.markdown("""
-<style>
-[data-testid="stMetric"] {
-    background-color: #1e2130;
-    border: 1px solid #3d4256;
-    border-left: 4px solid #00c2a8;
-    border-radius: 10px;
-    padding: 15px;
-}
-[data-testid="stMetricLabel"] {
-    color: #a0a4b8 !important;
-}
-[data-testid="stMetricValue"] {
-    color: #ffffff !important;
-}
-</style>
+<div style="
+    background: linear-gradient(90deg, #0f172a, #1e3a5f, #0f766e);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+">
+    <h1 style="color:white; margin:0;">📉 Customer Churn Prediction & Retention Strategy</h1>
+    <p style="color:#cbd5e1; margin-top:8px; font-size:16px;">
+        Data Analyst Portfolio Project — Telco Customer Churn Dataset
+    </p>
+</div>
 """, unsafe_allow_html=True)
-
 # ---- Load real data (everything below is computed, nothing is typed in) ----
 df = pd.read_csv("WA_Fn-UseC_-Telco-Customer-Churn.csv")
 top_risk = pd.read_csv("top_risk_customers.csv")
@@ -34,7 +29,7 @@ st.sidebar.markdown("**Customer Churn Prediction & Retention Strategy**")
 st.sidebar.markdown("Data Analyst Project — Telco Churn Dataset")
 
 # ---- Title ----
-st.title("Customer Churn Dashboard")
+#st.title("Customer Churn Dashboard")
 st.markdown("**Goal:** Identify at-risk customers and quantify the revenue impact of a targeted retention strategy.")
 
 # ---- Key Results (all computed live) ----
